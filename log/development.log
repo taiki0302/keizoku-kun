@@ -1,0 +1,1255 @@
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ bin/rails:9
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to DeviseCreateUsers (20220113072817)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "name" varchar, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20220113072817_devise_create_users.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  ↳ db/migrate/20220113072817_devise_create_users.rb:39
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  ↳ db/migrate/20220113072817_devise_create_users.rb:40
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220113072817"]]
+  ↳ bin/rails:9
+  [1m[35m (4.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-01-13 08:40:33.827778"], ["updated_at", "2022-01-13 08:40:33.827778"]]
+  ↳ bin/rails:9
+  [1m[35m (4.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for 180.144.237.66 at 2022-01-18 07:35:29 +0000
+Cannot render console from 180.144.237.66! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (3.2ms)
+Started GET "/" for 180.144.237.66 at 2022-01-18 07:35:31 +0000
+Cannot render console from 180.144.237.66! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  Rendered layouts/_header.html.erb (205.9ms)
+Completed 500 Internal Server Error in 2761ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `customer_signed_in?' for #<#<Class:0x0000000005478d80>:0x00000000054bb748>
+Did you mean?  user_signed_in?):
+    16:        <%#ここに顧客側と管理者側で表示内容を変えるif文を書く%>
+    17:        <%#すべてのアイコンに各ページのリンクをつける%>
+    18:        <p class="text-right">
+    19:        <% if customer_signed_in? %>
+    20:         <li><i class="header-title"><%= link_to(root_path) do %><%= image_tag 'IMG_2900.png', :size =>'300x140' %><% end %></i></li>
+    21:         <%= link_to 'ユーザー', customers_path, class: "fas fa-user text-dark pr-3 d-flex align-items-center" %>
+    22:         <%= link_to 'アバウト', public_home_about_path, class: "fas fa-store text-dark pr-3 d-flex align-items-center" %>
+  
+app/views/layouts/_header.html.erb:19:in `_app_views_layouts__header_html_erb__2554948585565465239_70211217184720'
+app/views/layouts/application.html.erb:14:in `_app_views_layouts_application_html_erb__2679914187070331583_45011220'
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_header.html.erb (191.3ms)
+Completed 500 Internal Server Error in 240ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `customer_signed_in?' for #<#<Class:0x00007fb6a7582a18>:0x00007fb6a7580fb0>
+Did you mean?  user_signed_in?):
+    16:        <%#ここに顧客側と管理者側で表示内容を変えるif文を書く%>
+    17:        <%#すべてのアイコンに各ページのリンクをつける%>
+    18:        <p class="text-right">
+    19:        <% if customer_signed_in? %>
+    20:         <li><i class="header-title"><%= link_to(root_path) do %><%= image_tag 'IMG_2900.png', :size =>'300x140' %><% end %></i></li>
+    21:         <%= link_to 'ユーザー', customers_path, class: "fas fa-user text-dark pr-3 d-flex align-items-center" %>
+    22:         <%= link_to 'アバウト', public_home_about_path, class: "fas fa-store text-dark pr-3 d-flex align-items-center" %>
+  
+app/views/layouts/_header.html.erb:19:in `_app_views_layouts__header_html_erb__2554948585565465239_70211307376700'
+app/views/layouts/application.html.erb:14:in `_app_views_layouts_application_html_erb__2679914187070331583_70211234415040'
+Started GET "/" for 180.144.237.66 at 2022-01-18 07:40:18 +0000
+Cannot render console from 180.144.237.66! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_header.html.erb (5.3ms)
+Completed 500 Internal Server Error in 368ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (The asset "IMG_2900.png" is not present in the asset pipeline.
+):
+    24:         <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "fas fa-sign-out-alt text-dark pr-3 d-flex align-items-center" %>
+    25:        </p>
+    26:        <% else %>
+    27:         <li><i class="header-title"><%= link_to(root_path) do %><%= image_tag 'IMG_2900.png', :size =>'300x140' %><% end %></i></li>
+    28:         <%= link_to 'アバウト', home_about_path, class: "fas fa-store text-dark pr-4 d-flex align-items-center" %>
+    29:         <%= link_to '新規登録', new_user_registration_path, class: "fas fa-user-plus text-dark pr-4 d-flex align-items-center" %>
+    30:         <%= link_to 'ログイン', new_user_session_path, class: "fas fa-sign-in-alt text-dark pr-4 d-flex align-items-center" %>
+  
+app/views/layouts/_header.html.erb:27:in `block in _app_views_layouts__header_html_erb__737820825560818618_70255942852960'
+app/views/layouts/_header.html.erb:27:in `_app_views_layouts__header_html_erb__737820825560818618_70255942852960'
+app/views/layouts/application.html.erb:14:in `_app_views_layouts_application_html_erb__3876965407810907333_52594300'
+Started GET "/" for 180.144.237.66 at 2022-01-18 07:40:43 +0000
+Cannot render console from 180.144.237.66! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 18ms (Views: 17.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home/about" for 180.144.237.66 at 2022-01-18 07:40:48 +0000
+Cannot render console from 180.144.237.66! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#about as HTML
+  Rendering homes/about.html.erb within layouts/application
+  Rendered homes/about.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+Completed 200 OK in 18ms (Views: 17.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home/about" for 180.144.237.66 at 2022-01-18 07:40:49 +0000
+Cannot render console from 180.144.237.66! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#about as HTML
+  Rendering homes/about.html.erb within layouts/application
+  Rendered homes/about.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+Completed 200 OK in 18ms (Views: 17.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home/about" for 180.144.237.66 at 2022-01-18 07:40:50 +0000
+Cannot render console from 180.144.237.66! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#about as HTML
+  Rendering homes/about.html.erb within layouts/application
+  Rendered homes/about.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 18ms (Views: 17.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home/about" for 180.144.237.66 at 2022-01-18 07:40:51 +0000
+Cannot render console from 180.144.237.66! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#about as HTML
+  Rendering homes/about.html.erb within layouts/application
+  Rendered homes/about.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 18ms (Views: 17.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home/about" for 180.144.237.66 at 2022-01-18 07:40:51 +0000
+Cannot render console from 180.144.237.66! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#about as HTML
+  Rendering homes/about.html.erb within layouts/application
+  Rendered homes/about.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+Completed 200 OK in 18ms (Views: 17.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home/about" for 180.144.237.66 at 2022-01-18 07:40:51 +0000
+Cannot render console from 180.144.237.66! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#about as HTML
+  Rendering homes/about.html.erb within layouts/application
+  Rendered homes/about.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+Completed 200 OK in 18ms (Views: 16.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 180.144.237.66 at 2022-01-18 07:40:52 +0000
+Cannot render console from 180.144.237.66! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendering /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (1.1ms)
+  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application (2188.1ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+Completed 200 OK in 2222ms (Views: 2208.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/sign_up" for 180.144.237.66 at 2022-01-18 07:40:57 +0000
+Cannot render console from 180.144.237.66! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/devise-4.8.1/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/devise-4.8.1/app/views/devise/shared/_error_messages.html.erb (0.4ms)
+  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (0.8ms)
+  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/devise-4.8.1/app/views/devise/registrations/new.html.erb within layouts/application (8.5ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+Completed 200 OK in 28ms (Views: 26.7ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateArticles (20220118080228)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20220118080228_create_articles.rb:3
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "articles" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "name" varchar, "time" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20220118080228_create_articles.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220118080228"]]
+  ↳ bin/rails:9
+  [1m[35m (5.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateArticleTimes (20220118081012)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20220118081012_create_article_times.rb:3
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "article_times" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "article_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20220118081012_create_article_times.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220118081012"]]
+  ↳ bin/rails:9
+  [1m[35m (4.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "a@a"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "a@a"], ["encrypted_password", "$2a$12$bRjOxY79MKCcbMnx/lTzg.7oZBV3rooVbHBbWMEXuZysGJQ1WqfQ."], ["created_at", "2022-01-18 08:27:55.733879"], ["updated_at", "2022-01-18 08:27:55.733879"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (5.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+Started GET "/" for 180.144.237.66 at 2022-01-18 08:28:08 +0000
+Cannot render console from 180.144.237.66! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (2.6ms)
+Started GET "/" for 180.144.237.66 at 2022-01-18 08:28:09 +0000
+Cannot render console from 180.144.237.66! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (0.3ms)
+Completed 500 Internal Server Error in 1281ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (no implicit conversion of Sass::Importers::Filesystem into String):
+     6:     <%= csrf_meta_tags %>
+     7:     <%= csp_meta_tag %>
+     8:     <script src="https://kit.fontawesome.com/05e4a509a5.js" crossorigin="anonymous"></script>
+     9:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    10:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    11:   </head>
+    12: 
+  
+app/views/layouts/application.html.erb:9:in `_app_views_layouts_application_html_erb__458522961065203749_41151020'
+Completed 500 Internal Server Error in 2510ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (no implicit conversion of Sass::Importers::Filesystem into String):
+     6:     <%= csrf_meta_tags %>
+     7:     <%= csp_meta_tag %>
+     8:     <script src="https://kit.fontawesome.com/05e4a509a5.js" crossorigin="anonymous"></script>
+     9:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    10:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    11:   </head>
+    12: 
+  
+app/views/layouts/application.html.erb:9:in `_app_views_layouts_application_html_erb__458522961065203749_29972920'
+Started GET "/" for 180.144.237.66 at 2022-01-18 08:30:42 +0000
+Cannot render console from 180.144.237.66! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (0.4ms)
+Completed 500 Internal Server Error in 1973ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (no implicit conversion of Sass::Importers::Filesystem into String):
+     6:     <%= csrf_meta_tags %>
+     7:     <%= csp_meta_tag %>
+     8:     <script src="https://kit.fontawesome.com/05e4a509a5.js" crossorigin="anonymous"></script>
+     9:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    10:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    11:   </head>
+    12: 
+  
+app/views/layouts/application.html.erb:9:in `_app_views_layouts_application_html_erb__458522961065203749_70244137230380'
+Started GET "/" for 180.144.237.66 at 2022-01-18 08:31:15 +0000
+Cannot render console from 180.144.237.66! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_header.html.erb (3.1ms)
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 180.144.237.66 at 2022-01-18 08:31:17 +0000
+Cannot render console from 180.144.237.66! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendering /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (1.1ms)
+  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application (1971.3ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+Completed 200 OK in 1988ms (Views: 1977.0ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/users/sign_in" for 180.144.237.66 at 2022-01-18 08:31:24 +0000
+Cannot render console from 180.144.237.66! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aYyUU77muD1OcOLIcVldmEGK9a/EgXNDzO87ytQZ06zdHUuzm9jqI7+EjOg794vbPZ4G0JH53vRwsZkBb0Oxlg==", "user"=>{"email"=>"a@a", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "a@a"], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 449ms (ActiveRecord: 0.3ms)
+
+
+  
+NoMethodError (undefined method `user_path' for #<Devise::SessionsController:0x00007fc6040bd1d8>):
+  
+app/controllers/application_controller.rb:6:in `after_sign_in_path_for'
+Started POST "/users/sign_in" for 180.144.237.66 at 2022-01-18 08:38:06 +0000
+Cannot render console from 180.144.237.66! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aYyUU77muD1OcOLIcVldmEGK9a/EgXNDzO87ytQZ06zdHUuzm9jqI7+EjOg794vbPZ4G0JH53vRwsZkBb0Oxlg==", "user"=>{"email"=>"a@a", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "a@a"], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Redirected to https://55e7ed2d0fa641eabfce55f6c64585ff.vfs.cloud9.ap-northeast-1.amazonaws.com/
+Completed 302 Found in 324ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 180.144.237.66 at 2022-01-18 08:38:06 +0000
+Cannot render console from 180.144.237.66! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:18
+  Rendered layouts/_header.html.erb (356.0ms)
+Completed 500 Internal Server Error in 361ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `users_path' for #<#<Class:0x00007fc5f9ec4cf0>:0x00007fc5f9ed7d78>
+Did you mean?  user_session_path):
+    16: 
+    17:        <p class="text-right">
+    18:        <% if user_signed_in? %>
+    19:         <%= link_to 'ユーザー', users_path, class: "fas fa-user text-dark pr-3 d-flex align-items-center" %>
+    20:         <%= link_to 'アバウト', home_about_path, class: "fas fa-store text-dark pr-3 d-flex align-items-center" %>
+    21:         <%= link_to '◎',  class: "fas fa-running text-dark pr-3 d-flex align-items-center" %>
+    22:         <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "fas fa-sign-out-alt text-dark pr-3 d-flex align-items-center" %>
+  
+app/views/layouts/_header.html.erb:19:in `_app_views_layouts__header_html_erb___2075345953600703538_70244139239940'
+app/views/layouts/application.html.erb:12:in `_app_views_layouts_application_html_erb__458522961065203749_70244139219580'
+Started GET "/" for 180.144.237.66 at 2022-01-18 08:39:43 +0000
+Cannot render console from 180.144.237.66! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:18
+  Rendered layouts/_header.html.erb (12.2ms)
+Completed 200 OK in 18ms (Views: 13.7ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/home/about" for 180.144.237.66 at 2022-01-18 08:39:47 +0000
+Cannot render console from 180.144.237.66! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#about as HTML
+  Rendering homes/about.html.erb within layouts/application
+  Rendered homes/about.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:18
+  Rendered layouts/_header.html.erb (2.6ms)
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users" for 180.144.237.66 at 2022-01-18 08:39:49 +0000
+Cannot render console from 180.144.237.66! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for UsersController):
+  
+actionpack (5.2.6) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.6) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.6) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.6) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.6) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.6) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.6) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.6) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.6) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.6) lib/action_dispatch/routing/route_set.rb:840:in `call'
+bullet (7.0.1) lib/bullet/rack.rb:12:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (5.2.6) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.6) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.6) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.6) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.6) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/users" for 180.144.237.66 at 2022-01-18 08:39:56 +0000
+Cannot render console from 180.144.237.66! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for UsersController):
+  
+actionpack (5.2.6) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.6) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.6) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.6) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.6) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.6) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.6) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.6) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.6) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.6) lib/action_dispatch/routing/route_set.rb:840:in `call'
+bullet (7.0.1) lib/bullet/rack.rb:12:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (5.2.6) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.6) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.6) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.6) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.6) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/home/about?class=fas+fa-running+text-dark+pr-3+d-flex+align-items-center" for 180.144.237.66 at 2022-01-18 08:39:58 +0000
+Cannot render console from 180.144.237.66! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#about as HTML
+  Parameters: {"class"=>"fas fa-running text-dark pr-3 d-flex align-items-center"}
+  Rendering homes/about.html.erb within layouts/application
+  Rendered homes/about.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:18
+  Rendered layouts/_header.html.erb (3.6ms)
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/home/about?class=fas+fa-running+text-dark+pr-3+d-flex+align-items-center" for 180.144.237.66 at 2022-01-18 08:40:00 +0000
+Cannot render console from 180.144.237.66! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#about as HTML
+  Parameters: {"class"=>"fas fa-running text-dark pr-3 d-flex align-items-center"}
+  Rendering homes/about.html.erb within layouts/application
+  Rendered homes/about.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:18
+  Rendered layouts/_header.html.erb (3.2ms)
+Completed 200 OK in 9ms (Views: 7.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/home/about?class=fas+fa-running+text-dark+pr-3+d-flex+align-items-center" for 180.144.237.66 at 2022-01-18 08:40:00 +0000
+Cannot render console from 180.144.237.66! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#about as HTML
+  Parameters: {"class"=>"fas fa-running text-dark pr-3 d-flex align-items-center"}
+  Rendering homes/about.html.erb within layouts/application
+  Rendered homes/about.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:18
+  Rendered layouts/_header.html.erb (3.1ms)
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/home/about?class=fas+fa-running+text-dark+pr-3+d-flex+align-items-center" for 180.144.237.66 at 2022-01-18 08:40:01 +0000
+Cannot render console from 180.144.237.66! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#about as HTML
+  Parameters: {"class"=>"fas fa-running text-dark pr-3 d-flex align-items-center"}
+  Rendering homes/about.html.erb within layouts/application
+  Rendered homes/about.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:18
+  Rendered layouts/_header.html.erb (3.0ms)
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/home/about?class=fas+fa-running+text-dark+pr-3+d-flex+align-items-center" for 180.144.237.66 at 2022-01-18 08:40:01 +0000
+Cannot render console from 180.144.237.66! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#about as HTML
+  Parameters: {"class"=>"fas fa-running text-dark pr-3 d-flex align-items-center"}
+  Rendering homes/about.html.erb within layouts/application
+  Rendered homes/about.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:18
+  Rendered layouts/_header.html.erb (3.0ms)
+Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/home/about?class=fas+fa-running+text-dark+pr-3+d-flex+align-items-center" for 180.144.237.66 at 2022-01-18 08:40:23 +0000
+Cannot render console from 180.144.237.66! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#about as HTML
+  Parameters: {"class"=>"fas fa-running text-dark pr-3 d-flex align-items-center"}
+  Rendering homes/about.html.erb within layouts/application
+  Rendered homes/about.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_header.html.erb (2.6ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/ec2-user/environment/keizoku-kun/app/views/layouts/_header.html.erb:22: syntax error, unexpected tIDENTIFIER, expecting ')'
+...pend=( link_to 'ログアウト', destroy_user_session_path,...
+...                ^~~~~~~~~~~~~~~
+/home/ec2-user/environment/keizoku-kun/app/views/layouts/_header.html.erb:23: syntax error, unexpected '<', expecting ')'
+       </p>
+       ^
+/home/ec2-user/environment/keizoku-kun/app/views/layouts/_header.html.erb:29: unknown regexp option - p
+/home/ec2-user/environment/keizoku-kun/app/views/layouts/_header.html.erb:30: syntax error, unexpected '<'
+      </ul>
+      ^
+/home/ec2-user/environment/keizoku-kun/app/views/layouts/_header.html.erb:31: unknown regexp options - dv
+/home/ec2-user/environment/keizoku-kun/app/views/layouts/_header.html.erb:32: syntax error, unexpected '<'
+    </div>
+    ^
+/home/ec2-user/environment/keizoku-kun/app/views/layouts/_header.html.erb:33: unknown regexp options - dv
+/home/ec2-user/environment/keizoku-kun/app/views/layouts/_header.html.erb:34: syntax error, unexpected '<'
+ </nav>
+ ^
+/home/ec2-user/environment/keizoku-kun/app/views/layouts/_header.html.erb:35: unknown regexp options - hadr
+/home/ec2-user/environment/keizoku-kun/app/views/layouts/_header.html.erb:39: unterminated string meets end of file
+          end
+              ^
+/home/ec2-user/environment/keizoku-kun/app/views/layouts/_header.html.erb:39: syntax error, unexpected end-of-input, expecting ')'):
+  
+app/views/layouts/_header.html.erb:22: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/_header.html.erb:23: syntax error, unexpected '<', expecting ')'
+app/views/layouts/_header.html.erb:29: unknown regexp option - p
+app/views/layouts/_header.html.erb:30: syntax error, unexpected '<'
+app/views/layouts/_header.html.erb:31: unknown regexp options - dv
+app/views/layouts/_header.html.erb:32: syntax error, unexpected '<'
+app/views/layouts/_header.html.erb:33: unknown regexp options - dv
+app/views/layouts/_header.html.erb:34: syntax error, unexpected '<'
+app/views/layouts/_header.html.erb:35: unknown regexp options - hadr
+app/views/layouts/_header.html.erb:39: unterminated string meets end of file
+app/views/layouts/_header.html.erb:39: syntax error, unexpected end-of-input, expecting ')'
+app/views/layouts/application.html.erb:12:in `_app_views_layouts_application_html_erb__458522961065203749_70244137414760'
+Started GET "/home/about?class=fas+fa-running+text-dark+pr-3+d-flex+align-items-center" for 180.144.237.66 at 2022-01-18 08:41:54 +0000
+Cannot render console from 180.144.237.66! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#about as HTML
+  Parameters: {"class"=>"fas fa-running text-dark pr-3 d-flex align-items-center"}
+  Rendering homes/about.html.erb within layouts/application
+  Rendered homes/about.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:18
+  Rendered layouts/_header.html.erb (2.7ms)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/home/about?class=fas+fa-running+text-dark+pr-3+d-flex+align-items-center" for 180.144.237.66 at 2022-01-18 08:41:55 +0000
+Cannot render console from 180.144.237.66! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#about as HTML
+  Parameters: {"class"=>"fas fa-running text-dark pr-3 d-flex align-items-center"}
+  Rendering homes/about.html.erb within layouts/application
+  Rendered homes/about.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:18
+  Rendered layouts/_header.html.erb (2.8ms)
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/home/about?class=fas+fa-running+text-dark+pr-3+d-flex+align-items-center" for 180.144.237.66 at 2022-01-18 08:47:09 +0000
+Cannot render console from 180.144.237.66! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#about as HTML
+  Parameters: {"class"=>"fas fa-running text-dark pr-3 d-flex align-items-center"}
+  Rendering homes/about.html.erb within layouts/application
+  Rendered homes/about.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:18
+  Rendered layouts/_header.html.erb (13.4ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"articles"}, missing required keys: [:id]):
+    18:        <% if user_signed_in? %>
+    19:         <%= link_to 'ユーザー', users_path, class: "fas fa-user text-dark pr-3 d-flex align-items-center" %>
+    20:         <%= link_to 'アバウト', home_about_path, class: "fas fa-store text-dark pr-3 d-flex align-items-center" %>
+    21:         <%= link_to '◎記録する',article_path,class: "fas fa-running text-dark pr-3 d-flex align-items-center" %>
+    22:         <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "fas fa-sign-out-alt text-dark pr-3 d-flex align-items-center" %>
+    23:        </p>
+    24:        <% else %>
+  
+app/views/layouts/_header.html.erb:21:in `_app_views_layouts__header_html_erb___2075345953600703538_70244224132880'
+app/views/layouts/application.html.erb:12:in `_app_views_layouts_application_html_erb__458522961065203749_70244224006200'
+Started GET "/home/about?class=fas+fa-running+text-dark+pr-3+d-flex+align-items-center" for 180.144.237.66 at 2022-01-18 08:47:24 +0000
+Cannot render console from 180.144.237.66! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#about as HTML
+  Parameters: {"class"=>"fas fa-running text-dark pr-3 d-flex align-items-center"}
+  Rendering homes/about.html.erb within layouts/application
+  Rendered homes/about.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:18
+  Rendered layouts/_header.html.erb (11.4ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"articles"}, missing required keys: [:id]):
+    18:        <% if user_signed_in? %>
+    19:         <%= link_to 'ユーザー', users_path, class: "fas fa-user text-dark pr-3 d-flex align-items-center" %>
+    20:         <%= link_to 'アバウト', home_about_path, class: "fas fa-store text-dark pr-3 d-flex align-items-center" %>
+    21:         <%= link_to '◎記録する',article_path,class: "fas fa-running text-dark pr-3 d-flex align-items-center" %>
+    22:         <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "fas fa-sign-out-alt text-dark pr-3 d-flex align-items-center" %>
+    23:        </p>
+    24:        <% else %>
+  
+app/views/layouts/_header.html.erb:21:in `_app_views_layouts__header_html_erb___2075345953600703538_70244196117840'
+app/views/layouts/application.html.erb:12:in `_app_views_layouts_application_html_erb__458522961065203749_70244196112600'
+Started GET "/home/about?class=fas+fa-running+text-dark+pr-3+d-flex+align-items-center" for 180.144.237.66 at 2022-01-18 08:55:00 +0000
+Cannot render console from 180.144.237.66! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#about as HTML
+  Parameters: {"class"=>"fas fa-running text-dark pr-3 d-flex align-items-center"}
+  Rendering homes/about.html.erb within layouts/application
+  Rendered homes/about.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:18
+  Rendered layouts/_header.html.erb (378.9ms)
+Completed 500 Internal Server Error in 385ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `article' for #<#<Class:0x00007fc60a3b2860>:0x00007fc60a3b0948>
+Did you mean?  article_url):
+    18:        <% if user_signed_in? %>
+    19:         <%= link_to 'ユーザー', users_path, class: "fas fa-user text-dark pr-3 d-flex align-items-center" %>
+    20:         <%= link_to 'アバウト', home_about_path, class: "fas fa-store text-dark pr-3 d-flex align-items-center" %>
+    21:         <% if article.exists? %>
+    22:         <%= link_to '◎記録する',article_path,class: "fas fa-running text-dark pr-3 d-flex align-items-center" %>
+    23:         <% else %>
+    24:         <%= link_to '◎',article_path,class: "fas fa-running text-dark pr-3 d-flex align-items-center" %>
+  
+app/views/layouts/_header.html.erb:21:in `_app_views_layouts__header_html_erb___2075345953600703538_70244275973220'
+app/views/layouts/application.html.erb:12:in `_app_views_layouts_application_html_erb__458522961065203749_70244275969360'
+Started GET "/home/about?class=fas+fa-running+text-dark+pr-3+d-flex+align-items-center" for 180.144.237.66 at 2022-01-18 08:55:22 +0000
+Cannot render console from 180.144.237.66! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#about as HTML
+  Parameters: {"class"=>"fas fa-running text-dark pr-3 d-flex align-items-center"}
+  Rendering homes/about.html.erb within layouts/application
+  Rendered homes/about.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:18
+  Rendered layouts/_header.html.erb (494.4ms)
+Completed 500 Internal Server Error in 499ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `user' for #<#<Class:0x00007fc60a3b2860>:0x00007fc60a89eb80>
+Did you mean?  super):
+    18:        <% if user_signed_in? %>
+    19:         <%= link_to 'ユーザー', users_path, class: "fas fa-user text-dark pr-3 d-flex align-items-center" %>
+    20:         <%= link_to 'アバウト', home_about_path, class: "fas fa-store text-dark pr-3 d-flex align-items-center" %>
+    21:         <% if user.article.exists? %>
+    22:         <%= link_to '◎記録する',article_path,class: "fas fa-running text-dark pr-3 d-flex align-items-center" %>
+    23:         <% else %>
+    24:         <%= link_to '◎',article_path,class: "fas fa-running text-dark pr-3 d-flex align-items-center" %>
+  
+app/views/layouts/_header.html.erb:21:in `_app_views_layouts__header_html_erb___2075345953600703538_70244278510580'
+app/views/layouts/application.html.erb:12:in `_app_views_layouts_application_html_erb__458522961065203749_70244278521700'
+Started GET "/home/about?class=fas+fa-running+text-dark+pr-3+d-flex+align-items-center" for 180.144.237.66 at 2022-01-18 08:57:34 +0000
+Cannot render console from 180.144.237.66! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#about as HTML
+  Parameters: {"class"=>"fas fa-running text-dark pr-3 d-flex align-items-center"}
+  Rendering homes/about.html.erb within layouts/application
+  Rendered homes/about.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:18
+  Rendered layouts/_header.html.erb (2.5ms)
+Completed 200 OK in 7ms (Views: 5.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/articles/new" for 180.144.237.66 at 2022-01-18 08:57:36 +0000
+Cannot render console from 180.144.237.66! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (362.9ms)
+Completed 500 Internal Server Error in 368ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `article' for #<#<Class:0x00007fc60aa43b98>:0x00007fc60aa42220>
+Did you mean?  article_url):
+    1: <body>
+    2: <%= form_with model:article, local:true do |f| %>
+    3:     <div class="form-group">
+    4:       <%= f.label :name %><br>
+    5:       <%= f.text_field :name,class: "form-control book_title" %>
+  
+app/views/articles/new.html.erb:2:in `_app_views_articles_new_html_erb___1083741825190609130_70244279394720'
+Started GET "/articles/new" for 180.144.237.66 at 2022-01-18 08:59:43 +0000
+Cannot render console from 180.144.237.66! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (495.9ms)
+Completed 500 Internal Server Error in 501ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `article' for #<#<Class:0x00007fc60aa43b98>:0x00007fc600b12f10>
+Did you mean?  article_url):
+    1: <body>
+    2: <%= form_with model:article, local:true do |f| %>
+    3:     <div class="form-group">
+    4:       <%= f.label :name %><br>
+    5:       <%= f.text_field :name,class: "form-control book_title" %>
+  
+app/views/articles/new.html.erb:2:in `_app_views_articles_new_html_erb___1083741825190609130_70244195933100'
+Started GET "/home/about" for 180.144.237.66 at 2022-01-18 08:59:47 +0000
+Cannot render console from 180.144.237.66! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#about as HTML
+  Rendering homes/about.html.erb within layouts/application
+  Rendered homes/about.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:18
+  Rendered layouts/_header.html.erb (2.5ms)
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/articles/new" for 180.144.237.66 at 2022-01-18 08:59:48 +0000
+Cannot render console from 180.144.237.66! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (330.9ms)
+Completed 500 Internal Server Error in 336ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `article' for #<#<Class:0x00007fc60aa43b98>:0x00007fc60aca0c38>
+Did you mean?  article_url):
+    1: <body>
+    2: <%= form_with model:article, local:true do |f| %>
+    3:     <div class="form-group">
+    4:       <%= f.label :name %><br>
+    5:       <%= f.text_field :name,class: "form-control book_title" %>
+  
+app/views/articles/new.html.erb:2:in `_app_views_articles_new_html_erb___1083741825190609130_70244280633900'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/articles/new" for 180.144.237.66 at 2022-01-18 09:02:28 +0000
+Cannot render console from 180.144.237.66! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by ArticlesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (499.4ms)
+Completed 500 Internal Server Error in 527ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `article' for #<#<Class:0x0000000007d05d98>:0x0000000007d0f8e8>
+Did you mean?  article_url):
+    1: <body>
+    2: <%= form_with model:article, local:true do |f| %>
+    3:     <div class="form-group">
+    4:       <%= f.label :name %><br>
+    5:       <%= f.text_field :name,class: "form-control book_title" %>
+  
+app/views/articles/new.html.erb:2:in `_app_views_articles_new_html_erb__2316072736650803939_65549600'
+Started GET "/articles/new" for 180.144.237.66 at 2022-01-18 09:02:39 +0000
+Cannot render console from 180.144.237.66! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (413.6ms)
+Completed 500 Internal Server Error in 418ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `user' for #<#<Class:0x0000000007d05d98>:0x00000000067173d8>
+Did you mean?  super):
+    1: <body>
+    2: <%= form_with model:user, local:true do |f| %>
+    3:     <div class="form-group">
+    4:       <%= f.label :name %><br>
+    5:       <%= f.text_field :name,class: "form-control book_title" %>
+  
+app/views/articles/new.html.erb:2:in `_app_views_articles_new_html_erb__2316072736650803939_54018880'
+Started GET "/articles/new" for 180.144.237.66 at 2022-01-18 09:02:56 +0000
+Cannot render console from 180.144.237.66! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (319.7ms)
+Completed 500 Internal Server Error in 324ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `article' for #<#<Class:0x0000000007d05d98>:0x00000000066d01b8>
+Did you mean?  article_url):
+    1: <body>
+    2: <%= form_with model:article, local:true do |f| %>
+    3:     <div class="form-group">
+    4:       <%= f.label :name %><br>
+    5:       <%= f.text_field :name,class: "form-control book_title" %>
+  
+app/views/articles/new.html.erb:2:in `_app_views_articles_new_html_erb__2316072736650803939_53905920'
+Started GET "/articles/new" for 180.144.237.66 at 2022-01-18 09:05:24 +0000
+Cannot render console from 180.144.237.66! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (382.5ms)
+Completed 500 Internal Server Error in 390ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `article' for #<#<Class:0x0000000007d05d98>:0x0000000006c40b20>
+Did you mean?  article_url):
+    1: <body>
+    2: <%= form_with model:article,url:article_path ,local:true do |f| %>
+    3:     <div class="form-group">
+    4:       <%= f.label :name %><br>
+    5:       <%= f.text_field :name,class: "form-control book_title" %>
+  
+app/views/articles/new.html.erb:2:in `_app_views_articles_new_html_erb__2316072736650803939_56760580'
+Started GET "/articles/new" for 180.144.237.66 at 2022-01-18 09:22:48 +0000
+Cannot render console from 180.144.237.66! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by ArticlesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (518.0ms)
+Completed 500 Internal Server Error in 559ms (ActiveRecord: 1.3ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `article' for #<#<Class:0x00000000075eabd0>:0x00000000075bb448>
+Did you mean?  @arricle):
+    1: <body>
+    2: <%= form_with model:article,url:article_path ,local:true do |f| %>
+    3:     <div class="form-group">
+    4:       <%= f.label :name %><br>
+    5:       <%= f.text_field :name,class: "form-control book_title" %>
+  
+app/views/articles/new.html.erb:2:in `_app_views_articles_new_html_erb__3376948152244167433_61824660'
+Started GET "/articles/new" for 180.144.237.66 at 2022-01-18 09:23:05 +0000
+Cannot render console from 180.144.237.66! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (413.0ms)
+Completed 500 Internal Server Error in 418ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `article' for #<#<Class:0x00000000075eabd0>:0x000000000646ab58>
+Did you mean?  @arricle):
+    1: <body>
+    2: <%= form_with model:article,local:true do |f| %>
+    3:     <div class="form-group">
+    4:       <%= f.label :name %><br>
+    5:       <%= f.text_field :name,class: "form-control book_title" %>
+  
+app/views/articles/new.html.erb:2:in `_app_views_articles_new_html_erb__3376948152244167433_52649240'
+Started GET "/articles/new" for 180.144.237.66 at 2022-01-18 09:23:19 +0000
+Cannot render console from 180.144.237.66! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (328.8ms)
+Completed 500 Internal Server Error in 351ms (ActiveRecord: 1.3ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `article' for #<#<Class:0x0000000005fde260>:0x0000000005feace0>
+Did you mean?  @article):
+    1: <body>
+    2: <%= form_with model:article,local:true do |f| %>
+    3:     <div class="form-group">
+    4:       <%= f.label :name %><br>
+    5:       <%= f.text_field :name,class: "form-control book_title" %>
+  
+app/views/articles/new.html.erb:2:in `_app_views_articles_new_html_erb__3376948152244167433_50263820'
+Started GET "/articles/new" for 180.144.237.66 at 2022-01-18 09:23:59 +0000
+Cannot render console from 180.144.237.66! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (415.6ms)
+Completed 500 Internal Server Error in 438ms (ActiveRecord: 1.3ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `article' for #<#<Class:0x00000000066ed970>:0x00000000066ff670>
+Did you mean?  @article):
+    1: <body>
+    2: <%= form_with model:article,local:true do |f| %>
+    3:     <div class="form-group">
+    4:       <%= f.label :name %><br>
+    5:       <%= f.text_field :name,class: "form-control book_title" %>
+  
+app/views/articles/new.html.erb:2:in `_app_views_articles_new_html_erb__3376948152244167433_53965020'
+Started GET "/articles/new" for 180.144.237.66 at 2022-01-18 09:24:07 +0000
+Cannot render console from 180.144.237.66! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (395.6ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+Completed 200 OK in 403ms (Views: 399.8ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/articles/new" for 180.144.237.66 at 2022-01-18 09:24:29 +0000
+Cannot render console from 180.144.237.66! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (No route matches [POST] "/articles/new"):
+  
+actionpack (5.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.6) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/articles/new" for 180.144.237.66 at 2022-01-18 09:26:24 +0000
+Cannot render console from 180.144.237.66! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (No route matches [POST] "/articles/new"):
+  
+actionpack (5.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.6) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/articles/new" for 180.144.237.66 at 2022-01-18 09:26:29 +0000
+Cannot render console from 180.144.237.66! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+Completed 200 OK in 24ms (Views: 6.2ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/articles/new" for 180.144.237.66 at 2022-01-18 09:26:32 +0000
+Cannot render console from 180.144.237.66! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (No route matches [POST] "/articles/new"):
+  
+actionpack (5.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.6) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/articles/new" for 180.144.237.66 at 2022-01-18 09:27:42 +0000
+Cannot render console from 180.144.237.66! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (No route matches [POST] "/articles/new"):
+  
+actionpack (5.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.6) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/articles/new" for 180.144.237.66 at 2022-01-18 09:28:26 +0000
+Cannot render console from 180.144.237.66! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (312.2ms)
+Completed 500 Internal Server Error in 333ms (ActiveRecord: 1.2ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `article' for #<#<Class:0x00007ff5784cf570>:0x00007ff5784cdbd0>
+Did you mean?  @article):
+    1: <body>
+    2: <%= form_with model:article,local:true do |f| %>
+    3:     <div class="form-group">
+    4:       <%= f.label :name %><br>
+    5:       <%= f.text_field :name,class: "form-control book_title" %>
+  
+app/views/articles/new.html.erb:2:in `_app_views_articles_new_html_erb__3376948152244167433_70346131013220'
+Started GET "/articles/new" for 180.144.237.66 at 2022-01-18 09:28:48 +0000
+Cannot render console from 180.144.237.66! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+Completed 200 OK in 8ms (Views: 5.5ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/articles" for 180.144.237.66 at 2022-01-18 09:28:54 +0000
+Cannot render console from 180.144.237.66! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SkzahHPQ3wBq5qmdrRLcOp47t43J/xW44PWa3aEbNjxGBiMp8y4UzzF7CB0paVQGb1qEmuP6wFz8JvZZjLsm5Q==", "article"=>{"name"=>"筋トレ"}, "commit"=>"Create Article"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:13
+  [1m[36mArticle Create (0.6ms)[0m  [1m[32mINSERT INTO "articles" ("user_id", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["name", "筋トレ"], ["created_at", "2022-01-18 09:28:54.896664"], ["updated_at", "2022-01-18 09:28:54.896664"]]
+  ↳ app/controllers/articles_controller.rb:13
+  [1m[35m (3.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/articles_controller.rb:13
+No template found for ArticlesController#create, rendering head :no_content
+Completed 204 No Content in 34ms (ActiveRecord: 4.4ms)
+
+
+Started GET "/articles/new" for 180.144.237.66 at 2022-01-18 09:28:57 +0000
+Cannot render console from 180.144.237.66! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+Completed 200 OK in 8ms (Views: 5.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/articles/new" for 180.144.237.66 at 2022-01-18 09:30:02 +0000
+Cannot render console from 180.144.237.66! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+Completed 200 OK in 25ms (Views: 6.2ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/articles" for 180.144.237.66 at 2022-01-18 09:30:46 +0000
+Cannot render console from 180.144.237.66! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zcQvIveuUa1WNK6FTu+hFrKYNKyInMizY7hcbxRUOSDBjtaPd1CaYg2pDwXKlCkqQ/kHu6KZHVd/azDrOfQp+Q==", "article"=>{"name"=>"筋トレ"}, "commit"=>"Create Article"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:14
+  [1m[36mArticle Create (0.5ms)[0m  [1m[32mINSERT INTO "articles" ("user_id", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["name", "筋トレ"], ["created_at", "2022-01-18 09:30:46.393808"], ["updated_at", "2022-01-18 09:30:46.393808"]]
+  ↳ app/controllers/articles_controller.rb:14
+  [1m[35m (3.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/articles_controller.rb:14
+Redirected to https://55e7ed2d0fa641eabfce55f6c64585ff.vfs.cloud9.ap-northeast-1.amazonaws.com/articles/2
+Completed 302 Found in 26ms (ActiveRecord: 5.2ms)
+
+
+Started GET "/articles/2" for 180.144.237.66 at 2022-01-18 09:30:46 +0000
+Cannot render console from 180.144.237.66! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:3
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.3ms)
+
+
+  
+NoMethodError (undefined method `article_items' for #<Article:0x00007ff57882a198>
+Did you mean?  article_times
+               article_times=):
+  
+app/controllers/articles_controller.rb:4:in `show'
+Started GET "/articles/2" for 180.144.237.66 at 2022-01-18 09:31:18 +0000
+Cannot render console from 180.144.237.66! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:3
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+Completed 200 OK in 42ms (Views: 5.4ms | ActiveRecord: 1.9ms)
+
+
