@@ -1,0 +1,2 @@
+class ArticleTimesController < ApplicationController
+end
