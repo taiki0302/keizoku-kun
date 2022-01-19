@@ -77,3 +77,7 @@ gem "enum_help"
 gem "pry-rails"
 gem 'dotenv-rails'
 gem 'compass-rails', github: 'Compass/compass-rails'
+gem 'dotenv-rails'
+group :production do
+  gem 'mysql2'
+end

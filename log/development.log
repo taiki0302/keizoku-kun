@@ -1253,3 +1253,331 @@ Processing by ArticlesController#show as HTML
 Completed 200 OK in 42ms (Views: 5.4ms | ActiveRecord: 1.9ms)
 
 
+Started GET "/" for 180.144.237.66 at 2022-01-18 09:44:28 +0000
+Cannot render console from 180.144.237.66! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_header.html.erb (3.1ms)
+Completed 200 OK in 15ms (Views: 7.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 180.144.237.66 at 2022-01-18 09:44:30 +0000
+Cannot render console from 180.144.237.66! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:18
+  Rendered layouts/_header.html.erb (11.8ms)
+Completed 200 OK in 16ms (Views: 14.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 180.144.237.66 at 2022-01-18 09:45:01 +0000
+Cannot render console from 180.144.237.66! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:18
+  Rendered layouts/_header.html.erb (24.6ms)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"articles"}, missing required keys: [:id]):
+    21:         <% if @article.present? %>
+    22:         <%= link_to '◎記録する',new_article_path,class: "fas fa-running text-dark pr-3 d-flex align-items-center" %>
+    23:         <% else %>
+    24:         <%= link_to '◎記録る',article_path,class: "fas fa-running text-dark pr-3 d-flex align-items-center" %>
+    25:         <% end %>
+    26:         <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "fas fa-sign-out-alt text-dark pr-3 d-flex align-items-center" %>
+    27:        </p>
+  
+app/views/layouts/_header.html.erb:24:in `_app_views_layouts__header_html_erb___229168259682269053_33425140'
+app/views/layouts/application.html.erb:12:in `_app_views_layouts_application_html_erb__1913583533499841753_31991180'
+Started GET "/" for 180.144.237.66 at 2022-01-18 09:46:38 +0000
+Cannot render console from 180.144.237.66! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:18
+  Rendered layouts/_header.html.erb (7.1ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"articles", :id=>nil}, missing required keys: [:id]):
+    21:         <% if @article.present? %>
+    22:         <%= link_to '◎記録する',new_article_path,class: "fas fa-running text-dark pr-3 d-flex align-items-center" %>
+    23:         <% else %>
+    24:         <%= link_to '◎記録る',article_path(@article),class: "fas fa-running text-dark pr-3 d-flex align-items-center" %>
+    25:         <% end %>
+    26:         <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "fas fa-sign-out-alt text-dark pr-3 d-flex align-items-center" %>
+    27:        </p>
+  
+app/views/layouts/_header.html.erb:24:in `_app_views_layouts__header_html_erb___229168259682269053_48290740'
+app/views/layouts/application.html.erb:12:in `_app_views_layouts_application_html_erb__1913583533499841753_48001880'
+Started GET "/" for 180.144.237.66 at 2022-01-18 09:48:16 +0000
+Cannot render console from 180.144.237.66! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:18
+  Rendered layouts/_header.html.erb (176.1ms)
+Completed 500 Internal Server Error in 181ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `users_article_path' for #<#<Class:0x00000000068100c8>:0x00007f8538411a08>
+Did you mean?  new_article_path):
+    21:         <% if @article.present? %>
+    22:         <%= link_to '◎記録する',new_article_path,class: "fas fa-running text-dark pr-3 d-flex align-items-center" %>
+    23:         <% else %>
+    24:         <%= link_to '◎記録る',users_article_path(@article),class: "fas fa-running text-dark pr-3 d-flex align-items-center" %>
+    25:         <% end %>
+    26:         <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "fas fa-sign-out-alt text-dark pr-3 d-flex align-items-center" %>
+    27:        </p>
+  
+app/views/layouts/_header.html.erb:24:in `_app_views_layouts__header_html_erb___229168259682269053_70105075645000'
+app/views/layouts/application.html.erb:12:in `_app_views_layouts_application_html_erb__1913583533499841753_70105075599000'
+Started GET "/" for 180.144.237.66 at 2022-01-18 09:48:45 +0000
+Cannot render console from 180.144.237.66! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:18
+  Rendered layouts/_header.html.erb (385.2ms)
+Completed 500 Internal Server Error in 390ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `users_article_path' for #<#<Class:0x00000000068100c8>:0x0000000006518488>
+Did you mean?  new_article_path):
+    21:         <% if @article.present? %>
+    22:         <%= link_to '◎記録する',new_article_path,class: "fas fa-running text-dark pr-3 d-flex align-items-center" %>
+    23:         <% else %>
+    24:         <%= link_to '◎記録る',users_article_path,class: "fas fa-running text-dark pr-3 d-flex align-items-center" %>
+    25:         <% end %>
+    26:         <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "fas fa-sign-out-alt text-dark pr-3 d-flex align-items-center" %>
+    27:        </p>
+  
+app/views/layouts/_header.html.erb:24:in `_app_views_layouts__header_html_erb___229168259682269053_53147340'
+app/views/layouts/application.html.erb:12:in `_app_views_layouts_application_html_erb__1913583533499841753_53059260'
+Started GET "/" for 180.144.237.66 at 2022-01-18 09:49:51 +0000
+Cannot render console from 180.144.237.66! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:18
+  Rendered layouts/_header.html.erb (12.6ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"articles"}, missing required keys: [:id]):
+    21:         <% if @article.present? %>
+    22:         <%= link_to '◎記録する',new_article_path,class: "fas fa-running text-dark pr-3 d-flex align-items-center" %>
+    23:         <% else %>
+    24:         <%= link_to '◎記録る',article_path,class: "fas fa-running text-dark pr-3 d-flex align-items-center" %>
+    25:         <% end %>
+    26:         <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "fas fa-sign-out-alt text-dark pr-3 d-flex align-items-center" %>
+    27:        </p>
+  
+app/views/layouts/_header.html.erb:24:in `_app_views_layouts__header_html_erb__1161615727978502324_55366660'
+app/views/layouts/application.html.erb:12:in `_app_views_layouts_application_html_erb__4239437818605553795_55312460'
+Started GET "/" for 180.144.237.66 at 2022-01-18 09:52:33 +0000
+Cannot render console from 180.144.237.66! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:18
+  Rendered layouts/_header.html.erb (22.3ms)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"articles"}, missing required keys: [:id]):
+    21:         <% if @article.present? %>
+    22:         <%= link_to '◎記録する',new_article_path,class: "fas fa-running text-dark pr-3 d-flex align-items-center" %>
+    23:         <% else %>
+    24:         <%= link_to '◎記録る',article_path,class: "fas fa-running text-dark pr-3 d-flex align-items-center" %>
+    25:         <% end %>
+    26:         <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "fas fa-sign-out-alt text-dark pr-3 d-flex align-items-center" %>
+    27:        </p>
+  
+app/views/layouts/_header.html.erb:24:in `_app_views_layouts__header_html_erb__1161615727978502324_56255460'
+app/views/layouts/application.html.erb:12:in `_app_views_layouts_application_html_erb__4239437818605553795_56001620'
+Started GET "/" for 180.144.237.66 at 2022-01-18 09:53:38 +0000
+Cannot render console from 180.144.237.66! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:18
+  Rendered layouts/_header.html.erb (2.5ms)
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/articles" for 180.144.237.66 at 2022-01-18 09:53:40 +0000
+Cannot render console from 180.144.237.66! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for ArticlesController):
+  
+actionpack (5.2.6) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.6) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.6) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.6) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.6) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.6) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.6) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.6) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.6) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.6) lib/action_dispatch/routing/route_set.rb:840:in `call'
+bullet (7.0.1) lib/bullet/rack.rb:12:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (5.2.6) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.6) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.6) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.6) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.6) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for 180.144.237.66 at 2022-01-18 09:54:30 +0000
+Cannot render console from 180.144.237.66! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:18
+  Rendered layouts/_header.html.erb (383.2ms)
+Completed 500 Internal Server Error in 389ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `article' for #<#<Class:0x0000000006a93660>:0x0000000006ba44f0>
+Did you mean?  article_url):
+    21:         <% if @article.present? %>
+    22:         <%= link_to '◎記録する',new_article_path,class: "fas fa-running text-dark pr-3 d-flex align-items-center" %>
+    23:         <% else %>
+    24:         <%= link_to '◎記録る',article_path(article),class: "fas fa-running text-dark pr-3 d-flex align-items-center" %>
+    25:         <% end %>
+    26:         <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "fas fa-sign-out-alt text-dark pr-3 d-flex align-items-center" %>
+    27:        </p>
+  
+app/views/layouts/_header.html.erb:24:in `_app_views_layouts__header_html_erb__1161615727978502324_56517360'
+app/views/layouts/application.html.erb:12:in `_app_views_layouts_application_html_erb__4239437818605553795_56486740'
+Started GET "/" for 180.144.237.66 at 2022-01-18 09:55:27 +0000
+Cannot render console from 180.144.237.66! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:18
+  Rendered layouts/_header.html.erb (2.5ms)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/articles" for 180.144.237.66 at 2022-01-18 09:55:29 +0000
+Cannot render console from 180.144.237.66! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for ArticlesController):
+  
+actionpack (5.2.6) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.6) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.6) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.6) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.6) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.6) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.6) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.6) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.6) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.6) lib/action_dispatch/routing/route_set.rb:840:in `call'
+bullet (7.0.1) lib/bullet/rack.rb:12:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (5.2.6) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.6) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.6) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.6) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.6) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'

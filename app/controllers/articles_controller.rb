@@ -1,7 +1,8 @@
 class ArticlesController < ApplicationController
+
   def show
     @article = Article.find(params[:id])
-	  @article_times = @article.article_times
+	  #@article_times = @article.article_times
   end
 
   def new
