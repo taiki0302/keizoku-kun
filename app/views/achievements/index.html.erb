@@ -1,0 +1,31 @@
+<div class="container">
+<div calss="row">
+  <div class="col-xs-12">
+    <h2 class="head-line title_h2 text-center">実績一覧</h2>
+      <% if @achievement.nil? %>
+        <table class="table table-hover table-bordered table-condensed">
+          <thead>
+            <tr class="info">
+              <th>タスク名</th>
+              <th>開始日</th>
+              <th>達成日</th>
+              <th>日数</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @achievements.each do |achievement| %>
+              <tr>
+                <td><%= achievement.name %></td>
+    		        <td><%= achievement.start_time.strftime('%Y/%m/%d') %></td>
+    		        <td><%= achievement.created_at.strftime('%Y/%m/%d') %></td>
+    		        <td><%= achievement.time %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      <% else %>
+        <p>実績がありません。</p>
+      <% end %>
+    </div>
+</div>
+</div>

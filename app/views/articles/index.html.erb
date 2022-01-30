@@ -1,0 +1,6 @@
+<h2>記録する</h2>
+<td><%= @article.name %></td>
+<%= button_to "カウントボタン", {controller: "article_times", action: "create"} %>
+<%#= button_to "ボタン", {controller: 'article_times', action: 'create'}, {method: :POST, class: "mybutton"} %>
+<%#= button_to 'Create', hoges_path(hoge: {user_id: current_user.id, body: 'fuga'}) %>
+<td><%= link_to "Destroy", article_path, class:"btn-sm btn-danger", method: :delete,remote: true,data: {confirm: "本当に消しますか？"} %></td>
