@@ -16,15 +16,16 @@
 
        <p class="text-right">
        <% if user_signed_in? %>
-        <%= link_to 'ユーザー', users_path, class: "fas fa-user text-dark pr-3 d-flex align-items-center" %>
+        <%= link_to 'ユーザー', user_path(current_user), class: "fas fa-user text-dark pr-3 d-flex align-items-center" %>
         <%= link_to 'アバウト', home_about_path, class: "fas fa-store text-dark pr-3 d-flex align-items-center" %>
-        <% if @article.present? %>
-        <%= link_to '◎記録する',new_article_path,class: "fas fa-running text-dark pr-3 d-flex align-items-center" %>
-        <% else %>
-        <%= link_to '◎記録る',articles_path,class: "fas fa-running text-dark pr-3 d-flex align-items-center" %>
-        <% end %>
         <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "fas fa-sign-out-alt text-dark pr-3 d-flex align-items-center" %>
-       </p>
+        <% if Article.exists? %>
+        <%= link_to '記録',article_path(@article),class: "fas fa-running text-dark pr-3 d-flex align-items-center" %>
+        <% else %>
+        <%= link_to 'タスク',new_article_path,class: "fas fa-running text-dark pr-3 d-flex align-items-center" %>
+        <% end %>
+        <%= link_to '実績', achievements_path, class: "fas fa-store text-dark pr-3 d-flex align-items-center" %>
+
        <% else %>
         <%= link_to 'アバウト', home_about_path, class: "fas fa-store text-dark pr-4 d-flex align-items-center" %>
         <%= link_to '新規登録', new_user_registration_path, class: "fas fa-user-plus text-dark pr-4 d-flex align-items-center" %>

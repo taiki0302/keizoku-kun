@@ -76,6 +76,9 @@ gem 'byebug'
 gem "enum_help"
 gem "pry-rails"
 gem 'dotenv-rails'
+gem "chartkick"
+gem 'chartable'
+gem 'groupdate'
 gem 'compass-rails', github: 'Compass/compass-rails'
 gem 'dotenv-rails'
 group :production do

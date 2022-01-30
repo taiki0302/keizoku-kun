@@ -1,8 +1,12 @@
 <body>
 <%= form_with model:@article,local:true do |f| %>
     <div class="form-group">
-      <%= f.label :name %><br>
-      <%= f.text_field :name,class: "form-control book_title" %>
+      <%= f.label :タスク名 %><br>
+      <%= f.text_field :name,class: "name" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :何日続けたい？ %><br>
+      <%= f.number_field :time,class: "time", size: 10, min: 1%>
     </div>
     <div class="form-group">
       <%= f.submit class: "btn btn-success" %>

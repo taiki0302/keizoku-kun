@@ -1,1 +1,60 @@
-<h2>記録する</h2>
+<h2>記録</h2>
+
+<div class="col-xs-3 billing">
+    <table class="table table-hover table-condensed table-bordered">
+      <tr>
+      <th class="info"> タスク名:</th>
+      <td><%= @article.name %></td>
+      </tr>
+
+      <tr>
+      <th class="info">開始日:</th>
+      <td><%= @article.created_at.strftime("%Y/%m/%d") %></td>
+      </tr>
+
+      <tr>
+      <th class="info">目標日数:</th>
+      <td><%= @article.time %></td>
+      </tr>
+
+      <tr>
+      <th class="info">達成日数:</th>
+      <td><%= @count_articles %></td>
+      </tr>
+    </table>
+</div>
+
+<div class="button">
+  <div class="container">
+<%= button_to number_to_percentage(@article_times,precision: 0),article_article_times_path(@article.id),method: :post %>
+<div class="tick">
+    </div>
+  </div>
+</div>
+
+<canvas id="myPieChart"></canvas>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+
+  <script>
+  var ctx = document.getElementById("myPieChart");
+  var myPieChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+      datasets: [{
+          backgroundColor: [
+              "#BB5179",
+              "#FAFF67",
+              "#58A27C",
+              "#3C00FF"
+          ],
+          data: [<%= @article_times %>,<%=@article_time_graph%>]
+      }]
+    },
+    options: {
+      title: {
+        display: true,
+        text: ''
+      }
+    }
+  });
+  </script>

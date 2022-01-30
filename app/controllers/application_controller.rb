@@ -1,6 +1,17 @@
 class ApplicationController < ActionController::Base
   before_action :authenticate_user!, except: [:top, :about, :public_action]
 	before_action :configure_permitted_parameters, if: :devise_controller?
+	before_action :myarticle
+
+  def set_user
+    @user = User.find(params[:id])
+  end
+
+	def myarticle
+	  if user_signed_in?
+	   @article = current_user.articles.last
+	  end
+	end
 
   def after_sign_in_path_for(resource)
     root_path
