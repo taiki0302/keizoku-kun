@@ -1,40 +1,49 @@
 <header>
+<div class="container">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">継続くん</a>
+ <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
- <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#ffe4e1">
-  <div class="container">
-    <a class="navbar-brand">
-     <form class="d-flex">
-      <input class="form-control ml-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-secondary mr-2" type="submit">検索</button>
-     </form>
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-     <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav ml-auto">
-
-       <p class="text-right">
-       <% if user_signed_in? %>
-        <%= link_to 'ユーザー', user_path(current_user), class: "fas fa-user text-dark pr-3 d-flex align-items-center" %>
-        <%= link_to 'アバウト', home_about_path, class: "fas fa-store text-dark pr-3 d-flex align-items-center" %>
-        <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "fas fa-sign-out-alt text-dark pr-3 d-flex align-items-center" %>
-        <% if Article.exists? %>
-        <%= link_to '記録',article_path(@article),class: "fas fa-running text-dark pr-3 d-flex align-items-center" %>
-        <% else %>
-        <%= link_to 'タスク',new_article_path,class: "fas fa-running text-dark pr-3 d-flex align-items-center" %>
-        <% end %>
-        <%= link_to '実績', achievements_path, class: "fas fa-store text-dark pr-3 d-flex align-items-center" %>
-
-       <% else %>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <% if user_signed_in? %>
+      <li class="nav-item">
+        <a class="nav-link" href="#"><%= link_to 'ユーザー', user_path(current_user), class: "fas fa-user text-dark pr-3 d-flex " %></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#"><%= link_to 'アバウト', home_about_path, class: "fas fa-store text-dark pr-3 d-flex align-items-center" %></a>
+      </li>
+      <li class="nav-item">
+      <% if Article.exists? %>
+        <a class="nav-link disabled" href="#"><%= link_to '記録',article_path(@article),class: "fas fa-running text-dark pr-3 d-flex align-items-center" %></a>
+      <% else %>
+        <a class="nav-link disabled" href="#"><%= link_to 'タスク',new_article_path,class: "fas fa-running text-dark pr-3 d-flex align-items-center" %></a>
+      <% end %>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#"><%= link_to '実績', achievements_path, class: "fas fa-store text-dark pr-3 d-flex align-items-center" %></a>
+      </li>
+      <% else %>
         <%= link_to 'アバウト', home_about_path, class: "fas fa-store text-dark pr-4 d-flex align-items-center" %>
         <%= link_to '新規登録', new_user_registration_path, class: "fas fa-user-plus text-dark pr-4 d-flex align-items-center" %>
         <%= link_to 'ログイン', new_user_session_path, class: "fas fa-sign-in-alt text-dark pr-4 d-flex align-items-center" %>
        <% end %>
-       </p>
-      </ul>
-     </div>
-    </div>
+       <li class="nav-item">
+        <a class="nav-link disabled" href="#"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "fas fa-sign-out-alt text-dark pr-3 d-flex align-items-center" %></a>
+      </li>
+    </ul>
+
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
   </div>
- </nav>
+</nav>
+</nav>
 </header>

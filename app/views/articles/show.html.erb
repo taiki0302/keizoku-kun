@@ -21,16 +21,25 @@
       <th class="info">達成日数:</th>
       <td><%= @count_articles %></td>
       </tr>
+
+      <tr>
+      <th class="info">達成率:</th>
+      <td><%= number_to_percentage(@article_times,precision: 0) %></td>
+      </tr>
+
     </table>
 </div>
 
-<div class="button">
-  <div class="container">
-<%= button_to number_to_percentage(@article_times,precision: 0),article_article_times_path(@article.id),method: :post %>
-<div class="tick">
-    </div>
-  </div>
-</div>
+<p class="text-right">
+<%= button_to article_article_times_path(@article.id),class: "btn btn-3d-circle",method: :post do %>
+  <span class="btn-3d-circle-content">
+    <span class="btn-3d-circle-front"><%= number_to_percentage(@article_times,precision: 0) %>
+    </span>
+  </span>
+  <span class="btn-3d-circle-back"><i class="fas fa-mouse-pointer"></i></span>
+<% end %>
+</p>
+
 
 <canvas id="myPieChart"></canvas>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>

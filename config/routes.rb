@@ -15,5 +15,5 @@ Rails.application.routes.draw do
     end
   end
   resources :achievements,only: [:index,:destroy,:create]
-  resources :users,only: [:show]
+  resources :users,only: [:show,:edit]
 end

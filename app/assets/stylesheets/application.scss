@@ -10,9 +10,126 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require bootstrap.min
  *= require_tree .
  *= require_self
  */
 @import "bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "https://use.fontawesome.com/releases/v5.13.0/css/all.css";
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+.btn,
+a.btn,
+button.btn {
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 1rem 4rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  color: #212529;
+  border-radius: 0.5rem;
+}
+
+a.btn-3d-circle {
+  display: block;
+
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  padding: 0;
+
+  border-radius: 50%;
+}
+
+.btn-3d-circle-content {
+  display: block;
+  line-height: 100px;
+
+  width: 100px;
+  height: 100px;
+
+  -webkit-transition: all 0.6s;
+
+  transition: all 0.6s;
+
+  border-radius: 50%;
+  background: #f2f5f6;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#f2f5f6),
+    color-stop(37%, #e3eaed),
+    to(#c8d7dc)
+  );
+  background: -webkit-linear-gradient(
+    top,
+    #f2f5f6 0%,
+    #e3eaed 37%,
+    #c8d7dc 100%
+  );
+  background: linear-gradient(to bottom, #f2f5f6 0%, #e3eaed 37%, #c8d7dc 100%);
+
+  -webkit-transform-style: preserve-3d;
+
+  transform-style: preserve-3d;
+  -webkit-perspective: 150px;
+  perspective: 150px;
+}
+
+.btn-3d-circle:hover .btn-3d-circle-content {
+  -webkit-transform: rotateY(0.5turn) rotateX(-0.03turn);
+  transform: rotateY(0.5turn) rotateX(-0.03turn);
+}
+
+.btn-3d-circle:hover .btn-3d-circle-front {
+  opacity: 0;
+}
+
+.btn-3d-circle:hover .btn-3d-circle-back {
+  top: calc(50% - 2rem);
+  left: calc(50% - 0.75rem);
+
+  opacity: 1;
+}
+
+.btn-3d-circle-back {
+  font-size: 3rem;
+
+  position: absolute;
+  top: 70%;
+  left: 70%;
+
+  -webkit-transition: all 0.3s;
+
+  transition: all 0.3s;
+  letter-spacing: 0;
+
+  opacity: 0;
+}
